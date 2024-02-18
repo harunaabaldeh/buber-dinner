@@ -4,7 +4,7 @@ using BuberDinner.Infrastracture;
 var builder = WebApplication.CreateBuilder(args);
 {
     builder.Services.AddApplication();
-    builder.Services.AddInfrastracture();
+    builder.Services.AddInfrastracture(builder.Configuration);
     builder.Services.AddControllers();
 }
 
