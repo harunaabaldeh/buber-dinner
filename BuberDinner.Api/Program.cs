@@ -1,5 +1,4 @@
 using BuberDinner.Api;
-using BuberDinner.Api.Common.Mapping;
 using BuberDinner.Application;
 using BuberDinner.Infrastracture;
 
@@ -15,6 +14,8 @@ var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 {
     app.UseExceptionHandler("/error");
+    app.UseAuthentication();
+    app.UseAuthorization();
     app.UseHttpsRedirection();
     app.MapControllers();
     app.Run();
