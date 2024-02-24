@@ -1,0 +1,5 @@
+@host=http://localhost:5000
+@token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1MWU1OTIyNC0xOTdlLTQ1OGUtYTJhYi04ZWY5YjQ4NGI5MDkiLCJnaXZlbl9uYW1lIjoiQm9iIiwiZmFtaWx5X25hbWUiOiJTbWl0aCIsImp0aSI6IjUzMDAxOGM5LTJlMGUtNGMxOC04MThmLWQxZmNjM2UxYjlhNyIsImV4cCI6MTcwODc5MzkzNCwiaXNzIjoiQnViZXJEaW5uZXIiLCJhdWQiOiJCdWJlckRpbm5lciJ9.nMFP2gKRym5J6NPnQvrIUYdEbU-Ft_bMBra8zFLBbSY"
+
+GET {{host}}/dinners
+Authorization: Brearer {{token}}

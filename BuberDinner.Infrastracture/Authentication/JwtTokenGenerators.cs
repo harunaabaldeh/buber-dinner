@@ -14,23 +14,22 @@ public class JwtTokenGenerators : IJwtTokenGenerator
     private readonly JwtSettings _jwtSettings;
     private readonly IDateTimeProvider _dateTimeProvider;
 
-    public JwtTokenGenerators(IDateTimeProvider dateTimeProvider, IOptions<JwtSettings> jtwOptions)
+    public JwtTokenGenerators(IDateTimeProvider dateTimeProvider, JwtSettings jtwOptions)
     {
         _dateTimeProvider = dateTimeProvider;
-        _jwtSettings = jtwOptions.Value;
+        _jwtSettings = jtwOptions;
     }
 
     public string GenerateToken(User user)
     {
-        var signingCredentials = new SigningCredentials(new SymmetricSecurityKey
-            (Encoding.UTF8.GetBytes(_jwtSettings.Secret)),
-         SecurityAlgorithms.HmacSha256);
+        var signingCredentials = new SigningCredentials(new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_jwtSettings.Secret)), SecurityAlgorithms.HmacSha256);
+
         var claims = new[]
         {
            new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
            new Claim(JwtRegisteredClaimNames.GivenName, user.FirstName),
            new Claim(JwtRegisteredClaimNames.FamilyName, user.LastName),
-            new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+           new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
         };
 
         var securityToken = new JwtSecurityToken(
