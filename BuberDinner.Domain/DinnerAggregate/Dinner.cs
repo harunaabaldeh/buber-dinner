@@ -1,12 +1,12 @@
 using BuberDinner.Domain.Common.Models;
 using BuberDinner.Domain.Dinner.Entities;
-using BuberDinner.Domain.Dinner.Enum;
 using BuberDinner.Domain.DinnerAggregate.Entities;
+using BuberDinner.Domain.DinnerAggregate.Enum;
 using BuberDinner.Domain.DinnerAggregate.ValueObjects;
 using BuberDinner.Domain.HostAggregate.ValueObjects;
 using BuberDinner.Domain.MenuAggregate.ValueObjects;
 
-namespace BuberDinner.Domain.Dinner;
+namespace BuberDinner.Domain.DinnerAggregate;
 public sealed class Dinner : AggregateRoot<DinnerId>
 {
     public string Name { get; }
