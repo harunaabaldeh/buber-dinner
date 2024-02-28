@@ -1,7 +1,7 @@
-using BuberDinner.Domain.Bill.ValueObjects;
+using BuberDinner.Domain.BillAggregate.ValueObjects;
 using BuberDinner.Domain.Common.Models;
 using BuberDinner.Domain.DinnerAggregate.ValueObjects;
-using BuberDinner.Domain.Guest.ValueObjects;
+using BuberDinner.Domain.GuestAggregate.ValueObjects;
 
 namespace BuberDinner.Domain.Dinner.Entities;
 public class Reservation : Entity<ReservationId>

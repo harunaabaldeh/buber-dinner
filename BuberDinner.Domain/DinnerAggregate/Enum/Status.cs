@@ -1,4 +1,4 @@
-namespace BuberDinner.Domain.Dinner.Enum;
+namespace BuberDinner.Domain.DinnerAggregate.Enum;
 public enum Status
 {
     Upcoming,
